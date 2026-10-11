@@ -1,7 +1,21 @@
+/*
+Tugas Akhir Tutor Kelompok 6 CBS 2026
+Anggota Kelompok    :   Aryatama Malik Hidayat      (051)
+                        Farros Atsir Nawaf          (037)
+                        Reyhan Dwi Abdillah         (055)
+                        Jonathan Abdiel Sirait      (015)
+                        M.Fakhri Adzkia Hakim       (017)
+                        Nalendra Abyan Farshad      (039)
+                        Walidah Ikroma Fikroh       (021)
+                        Putty Deniera Khairunnisa   (040)
+Nama Program        : Sistem Pencatatan Suhu Kota
+ */
+
+
 #include <iostream>
 using namespace std;
 
-void rincianSuhuHarian(int jumlahPencatatan, int suhuHari[]){
+void rincianSuhuHarian(int jumlahPencatatan, float suhuHari[]){
     int suhuEkstrem = 0;
     for (int k = 0; k < jumlahPencatatan; k++){
         cout << "- Hari " << k + 1 << " : " << suhuHari[k] << " C ";
@@ -23,7 +37,7 @@ void rincianSuhuHarian(int jumlahPencatatan, int suhuHari[]){
 }
 
 
-void rataSuhu(int jumlahPencatatan, int suhuHari[]){
+void rataSuhu(int jumlahPencatatan, float suhuHari[]){
     float totalSuhu=0;
     for (int h=0; h<jumlahPencatatan; h++){
         totalSuhu += suhuHari[h];
@@ -32,9 +46,9 @@ void rataSuhu(int jumlahPencatatan, int suhuHari[]){
     cout << "Rata-rata suhu adalah " << rataSuhu << "C"<< endl;
 }
 
-void suhuMinMax (int jumlahPencatatan, int suhuHari[]){
-    int suhuMin = suhuHari[0];
-    int suhuMax = suhuHari[0];
+void suhuMinMax (int jumlahPencatatan, float suhuHari[]){
+    float suhuMin = suhuHari[0];
+    float suhuMax = suhuHari[0];
 
     for (int m=0; m<jumlahPencatatan; m++){
         if (suhuHari[m]<suhuMin){
@@ -48,7 +62,7 @@ void suhuMinMax (int jumlahPencatatan, int suhuHari[]){
     cout << "Suhu terendah adalah " << suhuMin << "C" << endl; 
 }
 
-void hasilPencatatan(string namaKota, int jumlahPencatatan, int suhuHari[]){
+void hasilPencatatan(string namaKota, int jumlahPencatatan, float suhuHari[]){
     cout << "\n\n\n\n\n";
     cout << "=================================" <<endl;
     cout << "HASIL ANALISIS KOTA " << namaKota << endl;
@@ -65,7 +79,7 @@ int main(){
     string namaKota= "";
     cout << "Nama kota \t\t: "; cin >> namaKota;
     cout << "Jumlah hari pencatatan \t: "; cin >> jumlahPencatatan;
-    int suhuHari[jumlahPencatatan];
+    float suhuHari[jumlahPencatatan];
     for (int i=0; i<jumlahPencatatan; i++){
         cout << "Suhu pada hari ke-" << i+1 << "\t: ";
         cin >> suhuHari[i];
